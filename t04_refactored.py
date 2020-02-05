@@ -22,7 +22,7 @@
 import random
 from time import sleep
 
-delay = 1.0          # change to 0.0 for testing/speed runs; larger for dramatic effect!
+delay = 1.0  # change to 0.0 for testing/speed runs; larger for dramatic effect!
 dead = False
 
 
@@ -54,11 +54,12 @@ def end_story(user):
     :param user: the user's name
     :return: None
     """
-    print("Congratulations, " + user + ", you have made it to the end of this... strange... adventure. I hope you feel accomplished.")
+    print(
+        "Congratulations, " + user + ", you have made it to the end of this... strange... adventure. I hope you feel accomplished.")
     print()
     print()
     print()
-    sleep(delay*5)
+    sleep(delay * 5)
     print("Now go play again.")
 
 
@@ -72,6 +73,7 @@ def kill_if_dead(dead):
     if dead:
         quit()
 
+
 ###################################################################################
 
 
@@ -81,7 +83,7 @@ def scott_adventure():
 
     :return: None
     """
-    global dead             # You'll need this to be able to modify the dead variable
+    global dead  # You'll need this to be able to modify the dead variable
     direction = input("Which direction would you like to go? [North/South/East/West]")
 
     if direction == "North":
@@ -96,15 +98,17 @@ def scott_adventure():
         print("Running seems like a good idea now. But... it's really, really dark.")
         print("You turn and run like hell. The bear wakes up to the sound of your head bouncing off a low stalactite. ")
         print()
-        sleep(delay*2)
+        sleep(delay * 2)
         print("He eats you. You are delicious.")
         dead = True
     else:
         # Neutral choice
-        print("You're in another part of the cave. It is equally dark, and equally uninteresting. Please get me out of here!")
+        print(
+            "You're in another part of the cave. It is equally dark, and equally uninteresting. Please get me out of here!")
         sleep(delay)
 
     kill_if_dead(dead)
+
 
 ###################################################################################
 
@@ -155,8 +159,35 @@ def team_9_adv():
 
 
 def team_10_adv():
+    """
+    Google Doc: https://docs.google.com/document/d/1w0flyWSrCTCHRem11dJD-1qcPURrstyvEhlDrl0-J_c/edit?usp=sharing
+    """
+    global dead
+    door_options = input("Do you want to find treasure? Choose a door [Door 1/Door 2/Door 3/Door 4]")
+
+    if door_options == "door1" or "Door1" or "1" or "door 1" or "Door 1":
+        # oh..lucky choice
+        print("You find a box full of lost pirate treasure. Congratulations for being brave...")
+        sleep(delay)
+
+    elif door_options == "door2" or "Door2" or "2" or "door 2" or "Door 2":
+        # bad option
+        print("Wrong choice. You saw a lion sleeping and you play dead.")
+        sleep(delay)
+        print("The lion thinks you are bad meat but wants to know if you are dead.")
+        print("Oh! The lion is approaching you and waking up would not be a good idea.")
+        print("The lion finds out you are breathing. Goodbye, my friend. The lion eats you.")
+        dead = True
+
+    else:
+        # Neutral choice
+        print("Oh! You opened a wrong door and you fall into a pit, you are crying for help.")
+        sleep(delay)
+
+    if dead:
+        print("You are dead. Click on the green play button if you want to play again.")
+        quit()
     pass
-    # TODO Add your code here
 
 
 def team_11_adv():
@@ -223,13 +254,12 @@ def main():
              team_12_adv, team_13_adv, team_14_adv,
              team_15_adv, team_16_adv, team_17_adv,
              team_18_adv, team_19_adv, team_20_adv]
-    random.shuffle(paths)                               # Shuffles the order of paths, so each adventure is different
+    random.shuffle(paths)  # Shuffles the order of paths, so each adventure is different
 
     for i in range(len(paths)):
-        paths[i]()                                      # Runs each function in the paths list
+        paths[i]()  # Runs each function in the paths list
 
     end_story(user)
 
 
 main()
-
