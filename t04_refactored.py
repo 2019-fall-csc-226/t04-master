@@ -22,7 +22,9 @@
 import random
 from time import sleep
 
-delay = 1.0          # change to 0.0 for testing/speed runs; larger for dramatic effect!
+from t01_final_story import direction
+
+delay = 1.0  # change to 0.0 for testing/speed runs; larger for dramatic effect!
 dead = False
 
 
@@ -54,11 +56,12 @@ def end_story(user):
     :param user: the user's name
     :return: None
     """
-    print("Congratulations, " + user + ", you have made it to the end of this... strange... adventure. I hope you feel accomplished.")
+    print(
+        "Congratulations, " + user + ", you have made it to the end of this... strange... adventure. I hope you feel accomplished.")
     print()
     print()
     print()
-    sleep(delay*5)
+    sleep(delay * 5)
     print("Now go play again.")
 
 
@@ -72,6 +75,7 @@ def kill_if_dead(dead):
     if dead:
         quit()
 
+
 ###################################################################################
 
 
@@ -81,7 +85,7 @@ def scott_adventure():
 
     :return: None
     """
-    global dead             # You'll need this to be able to modify the dead variable
+    global dead  # You'll need this to be able to modify the dead variable
     direction = input("Which direction would you like to go? [North/South/East/West]")
 
     if direction == "North":
@@ -96,15 +100,17 @@ def scott_adventure():
         print("Running seems like a good idea now. But... it's really, really dark.")
         print("You turn and run like hell. The bear wakes up to the sound of your head bouncing off a low stalactite. ")
         print()
-        sleep(delay*2)
+        sleep(delay * 2)
         print("He eats you. You are delicious.")
         dead = True
     else:
         # Neutral choice
-        print("You're in another part of the cave. It is equally dark, and equally uninteresting. Please get me out of here!")
+        print(
+            "You're in another part of the cave. It is equally dark, and equally uninteresting. Please get me out of here!")
         sleep(delay)
 
     kill_if_dead(dead)
+
 
 ###################################################################################
 
@@ -160,8 +166,58 @@ def team_10_adv():
 
 
 def team_11_adv():
-    pass
+
     # TODO Add your code here
+
+    """
+    Usernames: redmon, camachoh
+    https://docs.google.com/document/d/17joBkuiWd09WY8AiUdcUlZsRfY9v4gAI64xZzsTOzm0/edit?usp=sharing
+    :return: 
+    """
+    global dead
+    if direction == "North" or direction == "north" or direction == "n" or direction == "N":
+        print("The stranger recognises this part of the cave. They could come in handy. ")
+        sleep(delay)
+        print()
+        print("You have come across another split in the cave. The other person is starting to act weird. ")
+        print("You can go East or West. The stranger seems to want to go West, but do you trust them? Choose wisely. ")
+        sleep(delay)
+        print()
+
+    trustworthy = input("Do you find them trustworthy enough to trust their advice to go West? [Yes/No]")
+
+    # Good choice
+    if trustworthy == "Yes" or "yes":
+        print("Lets hope this is the right thing to do...")
+        sleep(delay)
+        print("You find a chest")
+        sleep(delay)
+        print()
+        print("You open it. It's filled with treasure!")
+        sleep(delay)
+        print()
+        print("When you open the treasure, a boulder moves and reveals another path with light at the end.")
+        print()
+        sleep(delay * 3)
+    # Bad Choice
+    if trustworthy == "No" or "no":
+        print("You decide to not trust the stranger and head East instead. ")
+        sleep(delay * 2)
+        print("The cave seems to be unstable and weak compared to the previous part of the cave.")
+        sleep(delay * 2)
+        print("The stranger sees a pretty rock in the cave side and decides to try and pull it loose. ")
+        print()
+        sleep(delay * 3)
+        print(
+            "The rock comes loose. Suddenly rocks start coming loose from the ceiling of the cave. The stranger started "
+            "a collapse in the cave system.")
+        print("You can't move fast enough to escape the falling rocks and get crushed. ")
+        print()
+        dead = True
+
+    if dead:
+        print("Oh no! You died. Better luck next time! Try again by hitting the green play button. ")
+        quit()
 
 
 def team_12_adv():
@@ -223,13 +279,12 @@ def main():
              team_12_adv, team_13_adv, team_14_adv,
              team_15_adv, team_16_adv, team_17_adv,
              team_18_adv, team_19_adv, team_20_adv]
-    random.shuffle(paths)                               # Shuffles the order of paths, so each adventure is different
+    random.shuffle(paths)  # Shuffles the order of paths, so each adventure is different
 
     for i in range(len(paths)):
-        paths[i]()                                      # Runs each function in the paths list
+        paths[i]()  # Runs each function in the paths list
 
     end_story(user)
 
 
 main()
-
