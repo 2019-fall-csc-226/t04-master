@@ -120,8 +120,36 @@ def team_2_adv():
 
 
 def team_3_adv():
+
+    direction2 = input("Which direction would you like to go this time? [UP/DOWN/LEFT/RIGHT]")
+
+    if direction2 == "RIGHT" or "right" or "Right" or "R" or " RIGHT" or " right" or " Right":
+        # The worse choice possible
+        print("I don't think you wanted to go deeper into the cave did you?")
+        print("You will surely get eaten by bats...eeekkk!")
+        print("...and snakes too...hssssss!")
+        print("I pity you!")
+        dead = True
+        sleep(delay)
+    elif direction2 == "LEFT" or "left" or "Left" or "L" or " left" or " Left" or " LEFT":
+        # Good Choice
+        print("Can you see the sun?")
+        print("You found your way out!")
+        print("Food and water are awaiting for you at the exit!")
+
+    else:
+        # Neutral
+        print("You are not going anywhere!")
+        print("You are going to bump your head and crack it open or break your tailbone if you do this.")
+        print("Ouch!")
+        print("You are stuck here forever and ever!")
+        sleep(delay)
+
+    if dead == True:
+        print("Oh no! You kicked the bucket without making a bucketlist!")
+        quit()
+
     pass
-    # TODO Add your code here
 
 
 def team_4_adv():
