@@ -140,22 +140,43 @@ def team_6_adv():
 
 
 def team_7_adv():
-    username = input("What's your name?")
-
-    print()
-    print("Welcome,", username, )
-    sleep(delay)
+    # username = input("What's your name?")
+    #
+    # print()
+    # print("Welcome,", username, )
+    # sleep(delay)
     print("You have now randomly teleported to a village")
     print("There are two people approaching you")
     print("Someone who seems to want to sell you something and someone who wants to ask for money")
     choice = input("Who do you want to talk to? [Seller or Beggar]:")
 
-    if choice == "Seller" or "seller" or "s" or "S":
+    if choice == "Seller":
         print("The Seller tackles you and steals all your money")
         sleep(delay)
         print("You are now a beggar and can no longer feed yourself properly; therefore, you die of starvation")
         dead = True
+        quit()
 
+    elif choice == "seller":
+        print("The Seller tackles you and steals all your money")
+        sleep(delay)
+        print("You are now a beggar and can no longer feed yourself properly; therefore, you die of starvation")
+        dead = True
+        quit()
+
+    elif choice== "s":
+        print("The Seller tackles you and steals all your money")
+        sleep(delay)
+        print("You are now a beggar and can no longer feed yourself properly; therefore, you die of starvation")
+        dead = True
+        quit()
+
+    elif choice == "S":
+        print("The Seller tackles you and steals all your money")
+        sleep(delay)
+        print("You are now a beggar and can no longer feed yourself properly; therefore, you die of starvation")
+        dead = True
+        quit()
     elif choice == "Beggar" or "beggar" or "b" or "B":
     #elif choice == "Beggar" or "beggar" or "b":
         print("You have chosen the generous route. Good Karma comes your way.")
@@ -164,8 +185,8 @@ def team_7_adv():
     else:
         print("Please choose who you would like to talk to")
 
-    if dead == True:
-        quit()
+    #if dead == True:
+     #   quit()
     # TODO Add your code here
 
 
@@ -241,7 +262,7 @@ def main():
     """
 
     user = start_story()
-    paths = [ team_1_adv, team_2_adv,
+    paths = [scott_adventure, team_1_adv, team_2_adv,
              team_3_adv, team_4_adv, team_5_adv,
              team_6_adv, team_7_adv, team_8_adv,
              team_9_adv, team_10_adv, team_11_adv,
