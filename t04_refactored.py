@@ -122,8 +122,8 @@ def team_2_adv():
 def team_3_adv():
 
     direction2 = input("Which direction would you like to go this time? [UP/DOWN/LEFT/RIGHT]")
-
-    if direction2 == "RIGHT" or "right" or "Right" or "R" or " RIGHT" or " right" or " Right":
+    dead = False
+    if direction2 == "RIGHT":
         # The worse choice possible
         print("I don't think you wanted to go deeper into the cave did you?")
         print("You will surely get eaten by bats...eeekkk!")
@@ -131,7 +131,8 @@ def team_3_adv():
         print("I pity you!")
         dead = True
         sleep(delay)
-    elif direction2 == "LEFT" or "left" or "Left" or "L" or " left" or " Left" or " LEFT":
+
+    elif direction2 == "LEFT":
         # Good Choice
         print("Can you see the sun?")
         print("You found your way out!")
@@ -145,9 +146,7 @@ def team_3_adv():
         print("You are stuck here forever and ever!")
         sleep(delay)
 
-    if dead == True:
-        print("Oh no! You kicked the bucket without making a bucketlist!")
-        quit()
+    kill_if_dead(dead)
 
     pass
 
