@@ -21,8 +21,8 @@
 ######################################################################
 import random
 from time import sleep
-
-delay = 0.0          # change to 0.0 for testing/speed runs; larger for dramatic effect!
+from random import *  # Code needed to import randomness. Group 5
+delay = 1.0          # change to 0.0 for testing/speed runs; larger for dramatic effect!
 dead = False
 
 
@@ -110,38 +110,8 @@ def scott_adventure():
 
 
 def team_1_adv():
-    # FIXME: TEAM 1
-    """
-    https://docs.google.com/document/d/1PixP7Zq24i3DuiMJ67AmIe1nz4II9zzSYyRtKpGpGfk/edit?usp=sharing
-    Matthew Foti
-    Bekzodjon Rakhimov
-    :return: None
-    """
-    answer = False
-    print("\nYou have found a room that appears to be some goblin's kitchen.")
-    print("Inside the kitchen are some strange meats, and a kiwi.")
-    choice = input("Do you eat something, or continue on?[meat/kiwi/continue] ")
-    if choice.lower() == "kiwi":
-        print("\nYou feel revitalized. ")
-    elif choice.lower() == "meat":
-        while not answer:
-            print("\nDaring aren't you? You do understand goblins haven't invented refrigeration yet right?")
-            choice = input("That meat looks rather spoiled, are you sure about eating it? [Yes, No] ")
-            if "y" in choice.lower():
-                sleep(delay * 3)
-                print("\nYou have died of dysentery. ")
-                quit()  # The player dies
-                answer = True
-            elif "n" in choice.lower():
-                print("Good call. You continue into the labyrinth.")
-                answer = True
-            else:
-                print("You hurt yourself thinking too hard. Answer my question again.")
-        else:
-            print("\nThat was probably wise. You continue into the labyrinth\n")
-
-
-    # TODO Don't forget to check if your user is dead at the end of your chapter!
+    pass
+    # TODO Add your code here
 
 
 def team_2_adv():
