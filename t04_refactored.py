@@ -117,24 +117,24 @@ def team_1_adv():
     Bekzodjon Rakhimov
     :return: None
     """
-    Answer = False
+    answer = False
     print("\nYou have found a room that appears to be some goblin's kitchen.")
     print("Inside the kitchen are some strange meats, and a kiwi.")
     choice = input("Do you eat something, or continue on?[meat/kiwi/continue] ")
     if choice.lower() == "kiwi":
         print("\nYou feel revitalized. ")
     elif choice.lower() == "meat":
-        while (Answer == False):
+        while not answer:
             print("\nDaring aren't you? You do understand goblins haven't invented refrigeration yet right?")
             choice = input("That meat looks rather spoiled, are you sure about eating it? [Yes, No] ")
             if "y" in choice.lower():
                 sleep(delay * 3)
                 print("\nYou have died of dysentery. ")
                 quit()  # The player dies
-                Answer = True
+                answer = True
             elif "n" in choice.lower():
                 print("Good call. You continue into the labyrinth.")
-                Answer = True
+                answer = True
             else:
                 print("You hurt yourself thinking too hard. Answer my question again.")
         else:
