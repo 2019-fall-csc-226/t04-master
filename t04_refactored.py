@@ -175,6 +175,7 @@ if dead:
     print("Oh no! You died. Better luck next time! Try again by hitting the green play button. ")
     quit()
 
+
 def team_9_adv():
     pass
     # TODO Add your code here
