@@ -165,12 +165,14 @@ def team_10_adv():
     global dead
     door_options = input("Do you want to find treasure? Choose a door [Door 1/Door 2/Door 3/Door 4]")
 
-    if door_options == "door1" or "Door1" or "1" or "door 1" or "Door 1":
+    if door_options == "door1" or door_options == "Door1" or door_options == "1" or\
+            door_options == "door 1" or door_options == "Door 1":
         # oh..lucky choice
         print("You find a box full of lost pirate treasure. Congratulations for being brave...")
         sleep(delay)
 
-    elif door_options == "door2" or "Door2" or "2" or "door 2" or "Door 2":
+    elif door_options == "door2" or door_options == "Door2" or\
+            door_options == "2" or door_options == "door 2" or door_options == "Door 2":
         # bad option
         print("Wrong choice. You saw a lion sleeping and you play dead.")
         sleep(delay)
