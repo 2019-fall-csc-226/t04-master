@@ -238,6 +238,9 @@ def team_6_adv():
 
 def team_7_adv():
     # username = input("What's your name?")
+    """ Google Document: https://docs.google.com/document/d/1JBcLrAH07Jb6_k66-mTDLy-RNDBldJ_F5F7cPFAbEhg/edit?usp=sharing
+        Kumbula and Axel
+    """
     #
     # print()
     # print("Welcome,", username, )
